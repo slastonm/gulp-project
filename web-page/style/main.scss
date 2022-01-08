@@ -22,6 +22,9 @@ body{
         width: 100px;
         background: #F9F9F9;
         left: var(--size);
+        @media screen and (max-width: 450px){
+            display: none;
+        }
     }
 }
 
@@ -244,6 +247,7 @@ article{
     width: 100%;
     img{
         width: 100%;
+        height: auto;
         &:hover{
             transition: all 1s ease;
             filter: grayscale(80%);
@@ -272,6 +276,7 @@ article{
             width: 11px;
             height: 11px;
             background-image: url('../img/plus-icon.svg');
+            
         }
     }
     h2{
@@ -386,8 +391,6 @@ article{
         }
     }
     @media screen and (max-width: 1150px) {
-        // flex-direction: column;
-        // align-items: center;
         .image-block{
             max-width: 320px;
         }
@@ -409,6 +412,10 @@ article{
             li{
                 position: static;
             }
+        }
+        img{
+            width: 100%;
+            height: auto;
         }
     }
     li{
