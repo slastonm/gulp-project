@@ -42,13 +42,12 @@ function minify(){
         collapseWhitespace:true,
         removeComments: true
     }))
-    .pipe(rename('index.min.html'))
     .pipe(dest(`${path.dist}`));
 }
 exports.minify = minify
 
 function removeOldHtml(cb){
-    del(`${path.dist}index.html`);
+    del(`${path.dist}main.html`);
     cb();
 }
 

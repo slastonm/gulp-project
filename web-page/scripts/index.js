@@ -7,18 +7,25 @@ window.onload = function(){
   );
 
   let serarchButton = document.querySelectorAll('.search');
-  console.log(serarchButton);
-  let searchInput = document.querySelectorAll('.search-input');
+
+  let closeBtn = document.querySelectorAll('.close');
   let overlayElement = document.getElementsByClassName('overlay');  
+  function hideOverlay(){
+    overlayElement[0].classList.add("hide");    
+  }
   serarchButton[0].addEventListener("click", function(e){
-    if(searchInput[0].className === "search-input hide"){
-      searchInput[0].classList.remove("hide");
+    if(overlayElement[0].className === "overlay hide"){
       overlayElement[0].classList.remove("hide");
     }
   });
 
   overlayElement[0].addEventListener('click', function(e){
-    searchInput[0].classList.add("hide");
-    overlayElement[0].classList.add("hide");
-  })
+    if(e.target.className === "overlay"){
+      hideOverlay();
+    }
+  });
+  closeBtn[0].addEventListener('click', function(){
+    hideOverlay();
+  });
+  
 };
