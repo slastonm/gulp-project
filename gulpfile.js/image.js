@@ -2,22 +2,39 @@ const { src, dest, series } = require('gulp');
 const spritesmith = require('gulp.spritesmith');
 const image = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
+const browserSync = require('browser-sync').create();
+const path={
+    dev:'web-page/img/**',
+    devSprite:'web-page/img/sprite/',
+    dist:'dist/img/',
+    distSprite:'./web-page/img/sprite/',
+    exludeStyle:'!web-page/img/sprite/*.scss'
+}
+
+function moveImage(){
+    return src([path.dev, path.exludeStyle])
+    .pipe(dest(path.dist))
+    .pipe(browserSync.stream());
+}
+
+exports.moveImage = moveImage;
+
+
 function sprite(){
-    return src('img/*.png')
+    return src(`${path.dev}.png`)
     .pipe(plumber())
     .pipe(spritesmith({
         imgName: 'sprite.png',
         cssName: 'sprite.scss',
-        algorithm: 'alt-diagonal',
+        algorithm: 'binary-tree',
         padding: 20
     }))
-    .pipe(dest('img/sprite/'));
+    .pipe(dest(path.distSprite));
 }
 exports.sprite = sprite;
 
-// https://www.npmjs.com/package/gulp-imagemin
 function minimage(){
-    return src('img/*')
+    return src(`${path.dist}*`)
     .pipe(plumber())
     .pipe(image([
         image.svgo({
@@ -38,7 +55,8 @@ function minimage(){
     ], {
         verbose: true
     }))
-    .pipe(dest('dist/img'));
+    .pipe(dest(path.dist));
 }
 
 exports.minimage = minimage;
+

@@ -1,0 +1,200 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$-ellipse75-name: 'Ellipse75';
+$-ellipse75-x: 490px;
+$-ellipse75-y: 0px;
+$-ellipse75-offset-x: -490px;
+$-ellipse75-offset-y: 0px;
+$-ellipse75-width: 55px;
+$-ellipse75-height: 55px;
+$-ellipse75-total-width: 545px;
+$-ellipse75-total-height: 747px;
+$-ellipse75-image: 'sprite.png';
+$-ellipse75: (490px, 0px, -490px, 0px, 55px, 55px, 545px, 747px, 'sprite.png', 'Ellipse75', );
+$-ellipse76-name: 'Ellipse76';
+$-ellipse76-x: 490px;
+$-ellipse76-y: 75px;
+$-ellipse76-offset-x: -490px;
+$-ellipse76-offset-y: -75px;
+$-ellipse76-width: 55px;
+$-ellipse76-height: 55px;
+$-ellipse76-total-width: 545px;
+$-ellipse76-total-height: 747px;
+$-ellipse76-image: 'sprite.png';
+$-ellipse76: (490px, 75px, -490px, -75px, 55px, 55px, 545px, 747px, 'sprite.png', 'Ellipse76', );
+$-ellipse77-name: 'Ellipse77';
+$-ellipse77-x: 490px;
+$-ellipse77-y: 150px;
+$-ellipse77-offset-x: -490px;
+$-ellipse77-offset-y: -150px;
+$-ellipse77-width: 55px;
+$-ellipse77-height: 55px;
+$-ellipse77-total-width: 545px;
+$-ellipse77-total-height: 747px;
+$-ellipse77-image: 'sprite.png';
+$-ellipse77: (490px, 150px, -490px, -150px, 55px, 55px, 545px, 747px, 'sprite.png', 'Ellipse77', );
+$-rectangle168-name: 'Rectangle168';
+$-rectangle168-x: 0px;
+$-rectangle168-y: 0px;
+$-rectangle168-offset-x: 0px;
+$-rectangle168-offset-y: 0px;
+$-rectangle168-width: 470px;
+$-rectangle168-height: 747px;
+$-rectangle168-total-width: 545px;
+$-rectangle168-total-height: 747px;
+$-rectangle168-image: 'sprite.png';
+$-rectangle168: (0px, 0px, 0px, 0px, 470px, 747px, 545px, 747px, 'sprite.png', 'Rectangle168', );
+$facebook-hover-name: 'facebook-hover';
+$facebook-hover-x: 528px;
+$facebook-hover-y: 273px;
+$facebook-hover-offset-x: -528px;
+$facebook-hover-offset-y: -273px;
+$facebook-hover-width: 17px;
+$facebook-hover-height: 17px;
+$facebook-hover-total-width: 545px;
+$facebook-hover-total-height: 747px;
+$facebook-hover-image: 'sprite.png';
+$facebook-hover: (528px, 273px, -528px, -273px, 17px, 17px, 545px, 747px, 'sprite.png', 'facebook-hover', );
+$facebook-name: 'facebook';
+$facebook-x: 532px;
+$facebook-y: 225px;
+$facebook-offset-x: -532px;
+$facebook-offset-y: -225px;
+$facebook-width: 10px;
+$facebook-height: 16px;
+$facebook-total-width: 545px;
+$facebook-total-height: 747px;
+$facebook-image: 'sprite.png';
+$facebook: (532px, 225px, -532px, -225px, 10px, 16px, 545px, 747px, 'sprite.png', 'facebook', );
+$instagram-hover-name: 'instagram-hover';
+$instagram-hover-x: 490px;
+$instagram-hover-y: 273px;
+$instagram-hover-offset-x: -490px;
+$instagram-hover-offset-y: -273px;
+$instagram-hover-width: 18px;
+$instagram-hover-height: 19px;
+$instagram-hover-total-width: 545px;
+$instagram-hover-total-height: 747px;
+$instagram-hover-image: 'sprite.png';
+$instagram-hover: (490px, 273px, -490px, -273px, 18px, 19px, 545px, 747px, 'sprite.png', 'instagram-hover', );
+$instagram-name: 'instagram';
+$instagram-x: 490px;
+$instagram-y: 312px;
+$instagram-offset-x: -490px;
+$instagram-offset-y: -312px;
+$instagram-width: 18px;
+$instagram-height: 18px;
+$instagram-total-width: 545px;
+$instagram-total-height: 747px;
+$instagram-image: 'sprite.png';
+$instagram: (490px, 312px, -490px, -312px, 18px, 18px, 545px, 747px, 'sprite.png', 'instagram', );
+$play-icon-name: 'play-icon';
+$play-icon-x: 490px;
+$play-icon-y: 225px;
+$play-icon-offset-x: -490px;
+$play-icon-offset-y: -225px;
+$play-icon-width: 22px;
+$play-icon-height: 28px;
+$play-icon-total-width: 545px;
+$play-icon-total-height: 747px;
+$play-icon-image: 'sprite.png';
+$play-icon: (490px, 225px, -490px, -225px, 22px, 28px, 545px, 747px, 'sprite.png', 'play-icon', );
+$twitter-hover-name: 'twitter-hover';
+$twitter-hover-x: 490px;
+$twitter-hover-y: 388px;
+$twitter-hover-offset-x: -490px;
+$twitter-hover-offset-y: -388px;
+$twitter-hover-width: 18px;
+$twitter-hover-height: 16px;
+$twitter-hover-total-width: 545px;
+$twitter-hover-total-height: 747px;
+$twitter-hover-image: 'sprite.png';
+$twitter-hover: (490px, 388px, -490px, -388px, 18px, 16px, 545px, 747px, 'sprite.png', 'twitter-hover', );
+$twitter-name: 'twitter';
+$twitter-x: 490px;
+$twitter-y: 350px;
+$twitter-offset-x: -490px;
+$twitter-offset-y: -350px;
+$twitter-width: 18px;
+$twitter-height: 18px;
+$twitter-total-width: 545px;
+$twitter-total-height: 747px;
+$twitter-image: 'sprite.png';
+$twitter: (490px, 350px, -490px, -350px, 18px, 18px, 545px, 747px, 'sprite.png', 'twitter', );
+$spritesheet-width: 545px;
+$spritesheet-height: 747px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($-ellipse75, $-ellipse76, $-ellipse77, $-rectangle168, $facebook-hover, $facebook, $instagram-hover, $instagram, $play-icon, $twitter-hover, $twitter, );
+$spritesheet: (545px, 747px, 'sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -9,38 +9,45 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const combineMediaQuery = require('postcss-combine-media-query');
 const concat = require('gulp-concat');
+const del = require('del');
+
+
+const path ={
+    dev:"web-page/style/main.scss",
+    dist:"dist/style/"
+}
 
 function scss2css() {
-    return src('style/*.scss')
+    return src(path.dev)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(rename('style.css'))      
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
-        .pipe(dest('dist/css'));
+        .pipe(dest(path.dist));
 }
   
 exports.scss2css = scss2css;
 
 function postcss2css() {
     const plugins = [
-    autoprefixer(),
-    combineMediaQuery(),
-    cssnano()
-];
-return src('dist/css/*.css')
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(concat('all.css'))
-    .pipe(postcss(plugins))
-    .pipe(sourcemaps.write())
-    .pipe(rename('style.min.css'))
-    .pipe(dest('dist/css/'));
+        autoprefixer(),
+        combineMediaQuery(),
+        cssnano()
+    ];
+    return src(`${path.dist}*.css`)
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(concat('all.css'))
+        .pipe(postcss(plugins))
+        .pipe(sourcemaps.write())
+        .pipe(rename('style.min.css'))
+        .pipe(dest(path.dist));
 }
 exports.postcss2css = postcss2css;
 
-const del = require('del');
-function removeOld(){
-return del('dist/css/style.css');
+function removeOldStyle(cb){
+    del(`${path.dist}style.css`);
+    cb();
 }
-exports.clean = removeOld;
+exports.removeOldStyle = removeOldStyle;
