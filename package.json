@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev":"gulp dev",
+    "jsLint":"gulp linter",
+    "htmlLint":"gulp htmllinter",
+    "prod": "gulp prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

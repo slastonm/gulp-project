@@ -9,7 +9,7 @@ const del = require('del');
 
 const path={
     html:'web-page/*.html',
-    scss:'web-page/style/*.scss',
+    scss:'web-page/styles/*.scss',
     js:'web-page/scripts/*.js',
     dist:'dist/'
 
@@ -35,10 +35,10 @@ exports.dev = series( cleanOldFiles, moveHtml, sprite, moveImage, moveScripts, s
 
 exports.linter = scriptLint;
 exports.htmllinter = validation;
-exports.minify = minify;
+
 exports.prod = parallel(
     series(postcss2css, removeOldStyle), 
     series(jsModify, delOldScript), 
-    series(pathRewrite, minify, removeOldHtml),
+    series(pathRewrite, minify),
     series(minimage)
     );

@@ -27,5 +27,4 @@ window.onload = function(){
   closeBtn[0].addEventListener('click', function(){
     hideOverlay();
   });
-  
 };

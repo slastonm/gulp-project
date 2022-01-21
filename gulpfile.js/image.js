@@ -4,15 +4,12 @@ const image = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const path={
-    dev:'web-page/img/**',
-    devSprite:'web-page/img/sprite/',
+    dev:'web-page/img/',
     dist:'dist/img/',
-    distSprite:'./web-page/img/sprite/',
-    exludeStyle:'!web-page/img/sprite/*.scss'
 }
 
 function moveImage(){
-    return src([path.dev, path.exludeStyle])
+    return src([`${path.dev}**`, `!${path.dev}/icons/`, `!${path.dev}/sprite/*.scss`])
     .pipe(dest(path.dist))
     .pipe(browserSync.stream());
 }
@@ -21,7 +18,7 @@ exports.moveImage = moveImage;
 
 
 function sprite(){
-    return src(`${path.dev}.png`)
+    return src(`${path.dev}/icons/*.png`)
     .pipe(plumber())
     .pipe(spritesmith({
         imgName: 'sprite.png',
@@ -29,12 +26,12 @@ function sprite(){
         algorithm: 'binary-tree',
         padding: 20
     }))
-    .pipe(dest(path.distSprite));
+    .pipe(dest(`${path.dev}sprite/`));
 }
 exports.sprite = sprite;
 
 function minimage(){
-    return src(`${path.dist}*`)
+    return src(`${path.dist}**/*`)
     .pipe(plumber())
     .pipe(image([
         image.svgo({

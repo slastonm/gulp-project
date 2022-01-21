@@ -10,12 +10,12 @@ const eslint = require('gulp-eslint');
 const del = require('del');
 
 const path = {
-    dev:'web-page/scripts/*.js',
+    dev:'web-page/scripts/',
     dist:'dist/scripts/'
 }
 
 function moveScripts(){
-    return src(path.dev)
+    return src(`${path.dev}*.js`)
     .pipe(dest(path.dist));
 }
 
@@ -33,7 +33,7 @@ function scriptLint(){
 exports.scriptLint = scriptLint;
 
 function jsModify() {
-    return src(path.dev)
+    return src(`${path.dev}*.js`)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(babel({

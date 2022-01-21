@@ -4,16 +4,14 @@ const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const processhtml = require('gulp-processhtml');
 const w3cjs = require('gulp-w3cjs');
-const rename = require("gulp-rename");
-const del = require('del');
 
 const path ={
-    dev:'web-page/*.html',
+    dev:'web-page/',
     dist:'dist/'
 }
 
 function moveHtml(){
-    return src(path.dev)
+    return src(`${path.dev}*.html`)
     .pipe(dest(path.dist))
     .pipe(browserSync.stream());
 }
@@ -26,10 +24,8 @@ function pathRewrite(){
 }
 exports.pathRewrite =  pathRewrite;
 
-
-
 function validation(){
-    return src(path.distHtml)
+    return src(`${path.dist}/*.html`)
     .pipe(w3cjs())
     .pipe(w3cjs.reporter());
 }
@@ -46,9 +42,3 @@ function minify(){
 }
 exports.minify = minify
 
-function removeOldHtml(cb){
-    del(`${path.dist}main.html`);
-    cb();
-}
-
-exports.removeOldHtml = removeOldHtml;

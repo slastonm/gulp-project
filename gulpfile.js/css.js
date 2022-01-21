@@ -3,18 +3,16 @@ const plumber = require('gulp-plumber');
 const sass = require('gulp-sass')(require('sass'));
 const rename = require("gulp-rename");
 const sourcemaps = require('gulp-sourcemaps');
-
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const combineMediaQuery = require('postcss-combine-media-query');
-const concat = require('gulp-concat');
 const del = require('del');
 
 
 const path ={
-    dev:"web-page/style/main.scss",
-    dist:"dist/style/"
+    dev:"web-page/styles/main.scss",
+    dist:"dist/styles/"
 }
 
 function scss2css() {
@@ -38,7 +36,6 @@ function postcss2css() {
     return src(`${path.dist}*.css`)
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(concat('all.css'))
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write())
         .pipe(rename('style.min.css'))
