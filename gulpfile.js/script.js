@@ -22,7 +22,7 @@ function moveScripts(){
 exports.moveScripts = moveScripts;
 
 function scriptLint(){
-    return src(`${path.dist}*.js`)
+    return src(`${path.dev}*.js`)
     .pipe(plumber())
     .pipe(eslint({fix:true}))
     .pipe(eslint.format())

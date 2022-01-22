@@ -25,7 +25,7 @@ function pathRewrite(){
 exports.pathRewrite =  pathRewrite;
 
 function validation(){
-    return src(`${path.dist}/*.html`)
+    return src(`${path.dev}*.html`)
     .pipe(w3cjs())
     .pipe(w3cjs.reporter());
 }

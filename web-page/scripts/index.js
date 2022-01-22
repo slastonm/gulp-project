@@ -1,30 +1,30 @@
-window.onload = function(){
-  const wrapperElements = document.querySelectorAll( ".wrapper" );
-  let offSetLeftPosition = wrapperElements[0].offsetLeft
-  let value = `${offSetLeftPosition+100}px`;
+window.onload = function() {
+  const wrapperElements = document.querySelectorAll( '.wrapper' );
+  const offSetLeftPosition = wrapperElements[0].offsetLeft;
+  const value = `${offSetLeftPosition+100}px`;
   document.documentElement.style.setProperty(
-    '--size', value
+      '--size', value,
   );
 
-  let serarchButton = document.querySelectorAll('.search');
+  const serarchButton = document.querySelectorAll('.search');
 
-  let closeBtn = document.querySelectorAll('.close');
-  let overlayElement = document.getElementsByClassName('overlay');  
-  function hideOverlay(){
-    overlayElement[0].classList.add("hide");    
+  const closeBtn = document.querySelectorAll('.close');
+  const overlayElement = document.getElementsByClassName('overlay');
+  function hideOverlay() {
+    overlayElement[0].classList.add('hide');
   }
-  serarchButton[0].addEventListener("click", function(e){
-    if(overlayElement[0].className === "overlay hide"){
-      overlayElement[0].classList.remove("hide");
+  serarchButton[0].addEventListener('click', function(e) {
+    if (overlayElement[0].className === 'overlay hide') {
+      overlayElement[0].classList.remove('hide');
     }
   });
 
-  overlayElement[0].addEventListener('click', function(e){
-    if(e.target.className === "overlay"){
+  overlayElement[0].addEventListener('click', function(e) {
+    if (e.target.className === 'overlay') {
       hideOverlay();
     }
   });
-  closeBtn[0].addEventListener('click', function(){
+  closeBtn[0].addEventListener('click', function() {
     hideOverlay();
   });
 };
